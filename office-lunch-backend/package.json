@@ -1,0 +1,26 @@
+{
+  "name": "office-lunch-menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/models/index.js",
+  "scripts": {
+    "start": "node ./src/models/index.js",
+    "dev": "nodemon ./src/models/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "database": "^0.0.2",
+    "express": "^4.19.2",
+    "index": "^0.4.0",
+    "menu": "^0.2.5",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
