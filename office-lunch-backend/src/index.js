@@ -3,26 +3,26 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const session = require('express-session');
 const { Client } = require('pg');
-const client = require('./database');
+const client = require('./models/database');
+const authRoutes = require('./routes/login');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+}));
+
 app.use(bodyParser.json());
 app.use(session({
-    secret: 'express-session',
+    secret: 'jsonwebtoken',
     resave: false,
     saveUninitialized: true,
 }));
 
-client.connect((err) => {
-    if(err) {
-        console.error('Database connection error:', err.stack);
-    } else {
-        console.log('Database connected successfully');
-    }
-});
+app.use('/api', authRoutes);
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
 });
+

@@ -1,4 +1,11 @@
+const express = require('express');
+const postgresql = require('postgresql');
+const cors = require('cors');
 const {Client} = require('pg');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
 
 const client = new Client({
     host: 'localhost',

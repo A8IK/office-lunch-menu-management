@@ -1,6 +1,41 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'http://localhost:5000/api';
+
+export const login = async (credentials) => {
+    console.log(credentials);
+    try {
+        const response = await fetch(axios.post(`${API_BASE_URL}/login`, credentials,
+            {withCredentials: true,}));
+        return await response.data;
+    } 
+    catch (error) {
+        console.error('Error logging in:', error);
+        throw error;
+    }
+};
+
+
+const getAuthToken = () => sessionStorage.getItem('jsonwebtoken');
+
+const apiClient = axios.create({
+    baseURL: API_BASE_URL,
+    headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${getAuthToken()}`,
+    },
+});
+
+export const fetchData = async (endpoint) => {
+    try {
+        const response = await apiClient.get(endpoint);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+};
 
 export const addMenu = async (menu) => {
     try {
@@ -42,17 +77,6 @@ export const selectChoice = async (choice) => {
     } 
     catch (error) {
         console.error('Error selecting choice:', error);
-        throw error;
-    }
-};
-
-export const login = async (credentials) => {
-    try {
-        const response = await axios.post(`${API_BASE_URL}/login`, credentials);
-        return response.data;
-    } 
-    catch (error) {
-        console.error('Error logging in:', error);
         throw error;
     }
 };
