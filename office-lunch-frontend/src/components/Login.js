@@ -21,6 +21,11 @@ const Login = () => {
                     navigate('/admin');
                 } 
                 else if(response.data.redirectTo === '/employee'){
+                    const employeeId = response.data.user_id;
+
+                    console.log(`Storing user_id: ${employeeId}`);
+                    
+                    localStorage.setItem('userId', userId);
                     navigate('/employee');
                 }
             }

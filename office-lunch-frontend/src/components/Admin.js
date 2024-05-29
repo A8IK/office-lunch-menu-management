@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {addMenu, getChoices} from '../services/api';
+import React, { useState, useEffect } from 'react';
+import {addMenu, getChoices, deleteChoice} from '../services/api';
 import { useNavigate } from 'react-router-dom';
 import './admin.css';
 import backgroundImage from '../images/food-cover.jpg';
@@ -10,6 +10,10 @@ const Admin = () => {
     const [options, setOptions] = useState('');
     const [choices, setChoices] = useState([]);
 
+    useEffect(() => {
+        viewChoices();
+    }, []);
+
     const AddMenu = async () => {
         const menu = {date, options: options.split(',')};
         await addMenu(menu);
@@ -19,10 +23,11 @@ const Admin = () => {
         const response = await getChoices();
         setChoices(response.data);
     };
-
+    
     const handleLogout = () => {
         history('/login');
     };
+
     return(
       <div>
         <button className="logout-button" onClick={handleLogout}>Logout</button>

@@ -5,6 +5,8 @@ const session = require('express-session');
 const { Client } = require('pg');
 const client = require('./models/database');
 const authRoutes = require('./routes/login');
+const choiceRoutes = require('./routes/choices');
+const menuRoutes = require('./routes/menu');
 
 const app = express();
 
@@ -14,6 +16,7 @@ app.use(cors({
 }));
 
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(session({
     secret: 'jsonwebtoken',
     resave: false,
@@ -21,6 +24,8 @@ app.use(session({
 }));
 
 app.use('/api', authRoutes);
+app.use('/api', choiceRoutes);
+app.use('/api', menuRoutes);
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');

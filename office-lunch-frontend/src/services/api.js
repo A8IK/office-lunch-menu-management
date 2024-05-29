@@ -38,8 +38,9 @@ export const fetchData = async (endpoint) => {
 };
 
 export const addMenu = async (menu) => {
+    console.error('Error adding menu:');
     try {
-        const response = await axios.post(`${API_BASE_URL}/admin/menu`, menu);
+        const response = await axios.post(`${API_BASE_URL}/menu`, menu);
         return response.data;
     } 
     catch (error) {
@@ -48,9 +49,20 @@ export const addMenu = async (menu) => {
     }
 };
 
+export const addChoice = async (choiceData) => {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/choices`, choiceData);
+        return response.data;
+    } 
+    catch (error) {
+        console.error('Error adding choice:', error);
+        throw error;
+    }
+};
+
 export const getChoices = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/admin/choices`);
+        const response = await axios.get(`${API_BASE_URL}/choices`);
         return response.data;
     } 
     catch (error) {
@@ -61,7 +73,7 @@ export const getChoices = async () => {
 
 export const getMenu = async () => {
     try {
-        const response = await axios.get(`${API_BASE_URL}/employee/menu`);
+        const response = await axios.get(`${API_BASE_URL}/menu`);
         return response.data;
     } 
     catch (error) {
@@ -72,7 +84,7 @@ export const getMenu = async () => {
 
 export const selectChoice = async (choice) => {
     try {
-        const response = await axios.post(`${API_BASE_URL}/employee/choice`, choice);
+        const response = await axios.post(`${API_BASE_URL}/choice`, choice);
         return response.data;
     } 
     catch (error) {

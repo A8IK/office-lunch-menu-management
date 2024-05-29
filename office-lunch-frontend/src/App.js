@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes,BrowserRouter, Navigate} from 'r
 import Login from './components/Login';
 import Admin from './components/Admin';
 import Employee from './components/Employee';
+import Menu from './components/Menu';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path = "/login" element = {<Login />}/>
           <Route path = "/admin" element = {<Admin/>}/>
           <Route path = "/employee" element = {<Employee/>}/>
+          <Route path="/menu" element={<Menu />} />
           <Route path = "*" element = {<Navigate to = "/login"/>} />
         </Routes>
         </BrowserRouter>
