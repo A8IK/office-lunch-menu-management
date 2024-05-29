@@ -14,7 +14,6 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/api/login',{ userId, password, userType });
-            console.log(response);
             if(response.data.token){
                 sessionStorage.setItem('jsonwebtoken', response.data.token);
                 if (response.data.redirectTo === '/admin') {
@@ -22,20 +21,18 @@ const Login = () => {
                 } 
                 else if(response.data.redirectTo === '/employee'){
                     const employeeId = response.data.user_id;
-
-                    console.log(`Storing user_id: ${employeeId}`);
                     
                     localStorage.setItem('userId', userId);
                     navigate('/employee');
                 }
             }
             else{
-                console.error('Login failed:', response.message);
+                alert('Login failed: ', response.message);
             }
         } 
         catch (error) {
             setError('Login failed. Please try again.');
-            console.error('Login failed:', error);
+            alert('Login failed. Please enter correct information.', error);
         }
     };
 

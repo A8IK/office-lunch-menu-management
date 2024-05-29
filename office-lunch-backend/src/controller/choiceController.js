@@ -1,11 +1,14 @@
 const client = require('../models/database');
 const { addChoices, getChoicesdB } = require('../models/choices');
+
+//Function to add choices
 const getChoice = async (req, res) => {
 
-    const {employee_id, employee_name, choice } = req.body;
+    const {employee_id, employee_name, choices } = req.body;
+    console.log(employee_id, employee_name, choices)
     try {
-        const choices = await addChoices(employee_id, employee_name, choice);
-        res.status(200).json(choices);
+        const choicesT = await addChoices(employee_id, employee_name, choices);
+        res.status(200).json(choicesT);
     } 
     catch (error) {
         console.error('Error adding choice:', error);
@@ -13,11 +16,12 @@ const getChoice = async (req, res) => {
     }
 };
 
+//function to get choices
 const getChoices = async (req, res) => {
-    const { employee_id} = req.params;
+    const { choice} = req.params;
 
     try {
-        const choices = await getChoicesdB(employee_id);
+        const choices = await getChoicesdB();
         res.status(200).json(choices);
     } 
     catch (error) {

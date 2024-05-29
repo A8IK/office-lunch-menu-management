@@ -24,8 +24,9 @@ const Employee = () => {
 
     const submitChoice = async () => {
         const employee_id = localStorage.getItem('userId');
-        const choiceData = { employee_id: employee_id, employee_name: employeeName, choices: choices};
-
+        const choiceData = { employee_id: employee_id, employee_name: employeeName, choices: choice.split(',')};
+        
+        console.log(choiceData);
         await addChoice(choiceData);
 
         setEmployeeName('');
@@ -40,9 +41,9 @@ const Employee = () => {
     return (
         <div className="employee-container">
             <div className="menu-container">
-                <h2>Menu for {menu[0]?.date || 'Loading...'}</h2>
+                <h2>Menu for {menu ? menu[0]?.date : 'Loading...'}</h2>
                 <ul>
-                    {menu.length > 0 ? (
+                    {menu ? (
                         menu.map((item) => (
                             <li key={item.id}>{item.options.join(', ')}</li>
                         ))

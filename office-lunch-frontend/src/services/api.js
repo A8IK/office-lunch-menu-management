@@ -15,7 +15,6 @@ export const login = async (credentials) => {
     }
 };
 
-
 const getAuthToken = () => sessionStorage.getItem('jsonwebtoken');
 
 const apiClient = axios.create({
