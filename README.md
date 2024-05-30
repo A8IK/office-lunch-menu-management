@@ -44,7 +44,7 @@ Since theres no create account options so mannually I give some user data in dat
 789   |    Employee    |  56789
 1011  |    Employee    |  98765
 
-Properly using this info you can login easily.)
+Properly using this info can login easily.)
 
 **Running the Projects:**
 *Backend: After following the setup instructions, the backend server will be running on port 3000 by default.
