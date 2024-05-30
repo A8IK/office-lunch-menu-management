@@ -7,7 +7,7 @@ const Employee = () => {
     const history = useNavigate();
     const [menu, setMenu] = useState([]);
     const [employeeName, setEmployeeName] = useState('');
-    const [choices, setChoices] = useState([]);
+    // const [choices, setChoices] = useState([]);
     const [choice, setChoice] = useState('');
     const [menuId, setMenuId] = useState('');
 

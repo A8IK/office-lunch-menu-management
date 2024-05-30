@@ -37,7 +37,6 @@ export const fetchData = async (endpoint) => {
 };
 
 export const addMenu = async (menu) => {
-    console.error('Error adding menu:');
     try {
         const response = await axios.post(`${API_BASE_URL}/menu`, menu);
         return response.data;

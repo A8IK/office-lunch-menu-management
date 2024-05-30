@@ -1,9 +1,6 @@
 const client = require('./database');
 
 const addChoices = async (employee_id, employee_name, choices) => {
-
-    console.log(`Adding choice for user with ID: ${employee_id}, name: ${employee_name}, ${choices}`);
-
     try {
         await client.query('BEGIN');
         const insertQuery = `
