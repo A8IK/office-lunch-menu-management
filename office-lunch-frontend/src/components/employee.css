@@ -1,0 +1,66 @@
+.employee-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu-container {
+    background-color: #dfd3c3;
+    width: 50%;
+    padding: 20px;
+    border: 1px solid #d1d422;
+    border-radius: 5px;
+}
+
+.menu-container h2 {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+.input-container input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #455d7a;
+    color: #ececec;
+}
+
+.input-container input::placeholder {
+    color: #999;
+}
+
+.input-container button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffc93c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
