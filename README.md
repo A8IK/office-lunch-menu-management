@@ -1,15 +1,15 @@
-**Technologies Used**
+**Technologies Used:**
 Frontend: React.js, Axios
 Backend: Node.js, Express.js, PostgreSQL, pg-promise
 Styling: CSS
 Other Tools: React Router DOM, Axios
 
-**Features**
+**Features:**
 Admin can add menus for office lunches.
 Employees can view available menus and place their choices.
 Admin can view the choices made by employees.
 
-**Database Schema**
+**Database Schema:**
 The PostgreSQL database schema consists of three main tables:
 *Users
 1.`id` (Primary Key): Unique indentifier for user login.
@@ -23,7 +23,7 @@ The PostgreSQL database schema consists of three main tables:
 2.`employee_name`: Name of the employee placing the choice.
 3.`choices`: Array of choices made by the employee.
 
-**Setup Instructions**
+**Setup Instructions:**
 Backend:
 1.Clone the repository.
 2.Navigate to the office-lunch-backend directory.
@@ -46,6 +46,6 @@ Since theres no create account options so mannually I give some user data in dat
 
 Properly using this info you can login easily.)
 
-**Running the Projects**
+**Running the Projects:**
 *Backend: After following the setup instructions, the backend server will be running on port 3000 by default.
 *Frontend: After following the setup instructions, the frontend development server will be running on port 3000 by default. Access the application by visiting http://localhost:3000 in your browser.
