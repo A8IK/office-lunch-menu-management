@@ -24,19 +24,19 @@ The PostgreSQL database schema consists of three main tables:
 3.`choices`: Array of choices made by the employee.
 
 **Setup Instructions**
-*Backend
+Backend:
 1.Clone the repository.
 2.Navigate to the office-lunch-backend directory.
 3.Run npm install to install dependencies.
 4.Set up the PostgreSQL database and configure the connection in the database.js file.
 5.Run npm start to start the backend server.
-*Frontend
+Frontend:
 1.Navigate to the office-lunch-frontend directory.
 2.Run npm install to install dependencies.
 3.Update the API base URL in the api.js file if necessary.
 4.Run npm start to start the frontend development server.
-*Login
-Since theres no create account options so mannually I give some user data (e.g. 
+Login:
+Since theres no create account options so mannually I give some user data in database(e.g. 
  id       user_type     password 
 -------  ------------   ----------
 1234  |    Admin      |  123456
