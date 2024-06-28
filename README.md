@@ -47,5 +47,5 @@ Since theres no create account options so mannually I give some user data in dat
 Properly using this info can login easily.)
 
 **Running the Projects:**
-*Backend: After following the setup instructions, the backend server will be running on port 3000 by default.
-*Frontend: After following the setup instructions, the frontend development server will be running on port 3000 by default. Access the application by visiting http://localhost:3000 in your browser.
+**Backend: After following the setup instructions, the backend server will be running on port 3000 by default.
+**Frontend: After following the setup instructions, the frontend development server will be running on port 3000 by default. Access the application by visiting http://localhost:3000 in your browser.
